@@ -1,5 +1,5 @@
 public class SLLAntrian {
-    Node head,tail;
+    NodeAntrian head,tail;
     int size;
 
     public SLLAntrian(){
@@ -12,7 +12,7 @@ public class SLLAntrian {
     }
 
     public void tambahData(Kendaraan kendaraan){
-        Node newNode = new Node(kendaraan, null);
+        NodeAntrian newNode = new NodeAntrian(kendaraan, null);
         if (IsEmpty()) {
             head=tail=newNode;
         }else{
@@ -45,7 +45,7 @@ public class SLLAntrian {
             return;
         }
 
-        Node tmp = head;
+        NodeAntrian tmp = head;
 
         while (tmp != null) {
             tmp.kendaraan.tampilKendaraan();

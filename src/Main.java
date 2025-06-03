@@ -30,9 +30,24 @@ public class Main {
                     System.out.print("Input Merk: ");
                     String merk = sc.nextLine();
                     kendaraan = new Kendaraan(plat,jenis,merk);
+                    sll.tambahData(kendaraan);
                     System.out.println(">>Kendaraan masuk ke dalam antrian");
                     break;
-            
+                    case 2:
+                    System.out.printf("%-15s %-15s %-15s\n","Plat Nomor","jenis","Merk");
+                    sll.lihatAntrian();
+                    break;
+                case 3:
+                    System.out.println(">> Sisa Antrian: "+sll.cekSisaAntrian());
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 0:
+                    break;
                 default:
                     break;
             }
