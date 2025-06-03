@@ -8,7 +8,7 @@ public class BBM {
   }
 
   public void tampilBBM() {
-    System.out.printf("%-15s %-15.2f", namaBBM, hargaPerLiter);
+    System.out.printf("%-15s %-15.2f\n", namaBBM, hargaPerLiter);
   }
 
 }
