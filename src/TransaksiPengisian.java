@@ -4,9 +4,10 @@ public class TransaksiPengisian {
   double liter;
   double totalBayar;
 
-  public TransaksiPengisian(Kendaraan kendaraan, double liter){
+  public TransaksiPengisian(Kendaraan kendaraan,BBM bbm, double liter){
     this.kendaraan=kendaraan;
     this.liter=liter;
+    this.bbm = bbm;
   }
 
   public void riwayTransaksi() {

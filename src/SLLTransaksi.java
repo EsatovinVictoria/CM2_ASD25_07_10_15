@@ -11,8 +11,8 @@ public class SLLTransaksi {
     return size == 0;
   }
 
-  public void dataTransaksi(Kendaraan kendaraan, double perLiter){
-    TransaksiPengisian inputLayanan = new TransaksiPengisian(kendaraan, perLiter);
+  public void dataTransaksi(Kendaraan kendaraan, BBM bbm,double perLiter){
+    TransaksiPengisian inputLayanan = new TransaksiPengisian(kendaraan,bbm, perLiter);
     NodeTransaksi ndInput = new NodeTransaksi(inputLayanan, null);
   }
 

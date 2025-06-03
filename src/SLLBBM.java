@@ -37,7 +37,7 @@ public class SLLBBM {
 
         public BBM cariBBM(String key) {
             NodeBBM tmp = head;
-            boolean isFound = false;
+            boolean isFound;
 
             while (tmp != null) {
                 if (tmp.bbm.namaBBM.equalsIgnoreCase(key)) {
