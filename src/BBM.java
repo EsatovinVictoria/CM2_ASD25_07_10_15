@@ -6,4 +6,9 @@ public class BBM {
     this.namaBBM=namaBBM;
     this.hargaPerLiter=hargaPerLiter;
   }
+
+  public void tampilBBM() {
+    System.out.printf("%-15s %-15.2f", namaBBM, hargaPerLiter);
+  }
+
 }
