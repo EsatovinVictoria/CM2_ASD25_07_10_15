@@ -3,20 +3,24 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
+
         Kendaraan kendaraan = new Kendaraan();
         BBM bbm = new BBM();
+
         SLLAntrian sll = new SLLAntrian();
         SLLBBM sbb = new SLLBBM();
         SLLTransaksi stt = new SLLTransaksi();
+
         int pilih;
-        System.out.println();
 
         sbb.tambahDataBBM(new BBM("Pertalite", 10000));
         sbb.tambahDataBBM(new BBM("Pertamax", 12400));
-        sbb.tambahDataBBM(new BBM("Biosolara",6800));
+        sbb.tambahDataBBM(new BBM("Biosolar",6800));
         sbb.tambahDataBBM(new BBM("Dexlite",13400));
 
         do {
+            System.out.println();
+
             System.out.println("===== Sistem Antrian SPBU =====");
             System.out.println("1. Tambah Antrian");
             System.out.println("2. Lihat Antrian ");
@@ -28,46 +32,79 @@ public class Main {
             System.out.print("Pilih: ");
             pilih = sc.nextInt();
             sc.nextLine();
+
+            System.out.println();
+
             switch (pilih) {
                 case 1:
-                    System.out.print("Input Plat Nomor: ");
-                    String plat = sc.nextLine();
-                    System.out.print("Input Jenis Kendaraan: ");
-                    String jenis = sc.nextLine();
-                    System.out.print("Input Merk: ");
-                    String merk = sc.nextLine();
-                    kendaraan = new Kendaraan(plat,jenis,merk);
-                    sll.tambahDataKendaraan(kendaraan);
-                    System.out.println(">>Kendaraan masuk ke dalam antrian");
+                    while (true) {
+                        System.out.print("Input Plat Nomor: ");
+                        String plat = sc.nextLine();
+    
+                        System.out.print("Input Jenis Kendaraan: ");
+                        String jenis = sc.nextLine();
+    
+                        System.out.print("Input Merk: ");
+                        String merk = sc.nextLine();
+
+                        if (plat==""||jenis==""||merk=="") {
+                            System.out.println("input tidak boleh kosong");
+                        } else {
+                            kendaraan = new Kendaraan(plat,jenis,merk);
+                            sll.tambahDataKendaraan(kendaraan);
+                            break;
+                        }
+                    }
                     break;
-                    case 2:
+
+                case 2:
+                    System.out.println("-- Antrian Kendaraan --");
                     System.out.printf("%-15s %-15s %-15s\n","Plat Nomor","jenis","Merk");
                     sll.lihatAntrian();
                     break;
+
                 case 3:
                     System.out.println(">> Sisa Antrian: "+sll.cekSisaAntrian());
                     break;
+
                 case 4:
-                    System.out.println("Nama Kendaraan: "+ sll.head.kendaraan.platNomor);
+                    System.out.println("Kendaraan: "+ sll.head.kendaraan.platNomor);
                     sbb.ListBBM();
-                    System.out.print("pilih BBM:");
-                    String namaBBM = sc.nextLine();
-                    System.out.print("Masukkan jumlah liter: ");
-                    double liter = sc.nextDouble();
-                    sc.nextLine();
-                    BBM cariBBM = sbb.cariBBM(namaBBM);
-                    stt.dataTransaksi(sll.head.kendaraan, cariBBM, liter);
-                    System.out.println(">> Transaksi Berhasil Dicatat");
-                    sll.layaniKendaraan();
+
+                    while (true) {
+                        System.out.print("pilih BBM: ");
+                        String namaBBM = sc.nextLine();
+                        
+                        System.out.print("Masukkan jumlah liter: ");
+                        double liter = sc.nextDouble();
+                        sc.nextLine();
+                        
+                        BBM cariBBM = sbb.cariBBM(namaBBM);
+
+                        if (cariBBM != null) { 
+                            stt.dataTransaksi(sll.head.kendaraan, cariBBM, liter);
+                            sll.layaniKendaraan();
+                            break;
+                        }
+                    }
                     break;
+
                 case 5:
+                    System.out.println("-- Riwayat Transaksi --");
                     stt.tampilTransaksi();
                     break;
+
                 case 6:
+                    System.out.println("-- Pengurutan Riwayat Transaksi --");
+                    stt.transaksiASC();
                     break;
+
                 case 0:
+                System.exit(0);
                     break;
                 default:
+
+                    System.out.println("--menu tidak tersedia--");
                     break;
             }
         } while (true);

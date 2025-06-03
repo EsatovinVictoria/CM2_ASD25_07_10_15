@@ -12,14 +12,18 @@ public class SLLAntrian {
     }
 
     public void tambahDataKendaraan(Kendaraan kendaraan){
+
         NodeAntrian newNode = new NodeAntrian(kendaraan, null);
+
         if (IsEmpty()) {
             head=tail=newNode;
         }else{
             tail.next = newNode;
             tail = newNode;
         }
+
         size++;
+        System.out.println(">> Kendaraan masuk ke dalam antrian");
     }
 
     public int cekSisaAntrian() {
@@ -27,6 +31,7 @@ public class SLLAntrian {
     }
 
     public void layaniKendaraan() {
+
         if (IsEmpty()) {
             System.out.println("Antrian masih kosong!");
             return;
@@ -36,10 +41,12 @@ public class SLLAntrian {
         } else {
             head = head.next;
         }
+
         size--;
     }
 
     public void lihatAntrian() {
+
         if (IsEmpty()) {
             System.out.println("Antrian masih kosong!");
             return;
@@ -51,6 +58,5 @@ public class SLLAntrian {
             tmp.kendaraan.tampilKendaraan();
             tmp = tmp.next;
         }
-        System.out.println();
     }
 }

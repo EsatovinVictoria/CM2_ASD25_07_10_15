@@ -12,23 +12,30 @@ public class SLLTransaksi {
   }
 
   public void dataTransaksi(Kendaraan kendaraan, BBM bbm,double perLiter){
+
     TransaksiPengisian inputLayanan = new TransaksiPengisian(kendaraan,bbm, perLiter);
     NodeTransaksi ndInput = new NodeTransaksi(inputLayanan, null);
+
     if (isEmpty15()) {
       head=tail=ndInput;
     } else {
       tail.next=ndInput;
       tail=ndInput;
     }
+
+    size++;
+    System.out.println(">> Transaksi Berhasil Dicatat");
   }
 
+
   public void tampilTransaksi(){
+
     if (isEmpty15()) {
       System.out.println("Antrian kosong");
     } else {
       NodeTransaksi tmp = head;
-      System.out.println("-- Riwayat Transaksi --");
-      System.out.printf("%-15s %-15s %-15s %-15s", "Plat Nomor", "Jenis", "Jenis BBM", "Total");
+      System.out.printf("%-15s %-15s %-15s %-15s\n", "Plat Nomor", "Jenis", "Jenis BBM", "Total");
+      
       while (tmp!=null) {
         tmp.tp.riwayTransaksi();
         tmp=tmp.next;
@@ -37,13 +44,17 @@ public class SLLTransaksi {
   }
 
   public void transaksiASC(){
-    if (head==null||head.next==null) {
+
+    if (head==null) {
       return;
     }
+
     boolean swap;
+
     do {
       swap=false;
       NodeTransaksi current = head;
+
       while (current.next!=null) {
         if (current.tp.kendaraan.platNomor.compareTo(current.next.tp.kendaraan.platNomor)>0) {
           TransaksiPengisian tmp = current.tp;
@@ -51,8 +62,10 @@ public class SLLTransaksi {
           current.next.tp = tmp;
           swap=true;
         }
+
         current=current.next;
       }
     } while (swap);
+    tampilTransaksi();
   }
 }
