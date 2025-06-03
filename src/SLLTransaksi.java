@@ -46,6 +46,7 @@ public class SLLTransaksi {
   public void transaksiASC(){
 
     if (head==null) {
+      System.out.println("Antrian masih kosong!");
       return;
     }
 

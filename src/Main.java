@@ -68,23 +68,27 @@ public class Main {
                     break;
 
                 case 4:
-                    System.out.println("Kendaraan: "+ sll.head.kendaraan.platNomor);
-                    sbb.ListBBM();
-
-                    while (true) {
-                        System.out.print("pilih BBM: ");
-                        String namaBBM = sc.nextLine();
-                        
-                        System.out.print("Masukkan jumlah liter: ");
-                        double liter = sc.nextDouble();
-                        sc.nextLine();
-                        
-                        BBM cariBBM = sbb.cariBBM(namaBBM);
-
-                        if (cariBBM != null) { 
-                            stt.dataTransaksi(sll.head.kendaraan, cariBBM, liter);
-                            sll.layaniKendaraan();
-                            break;
+                    if (sll.IsEmpty()) {
+                        System.out.println("Antrian Masih Kosong!");
+                    } else {
+                        System.out.println("Kendaraan: "+ sll.head.kendaraan.platNomor);
+                        sbb.ListBBM();
+    
+                        while (true) {
+                            System.out.print("pilih BBM: ");
+                            String namaBBM = sc.nextLine();
+                            
+                            System.out.print("Masukkan jumlah liter: ");
+                            double liter = sc.nextDouble();
+                            sc.nextLine();
+                            
+                            BBM cariBBM = sbb.cariBBM(namaBBM);
+    
+                            if (cariBBM != null) { 
+                                stt.dataTransaksi(sll.head.kendaraan, cariBBM, liter);
+                                sll.layaniKendaraan();
+                                break;
+                            }
                         }
                     }
                     break;
