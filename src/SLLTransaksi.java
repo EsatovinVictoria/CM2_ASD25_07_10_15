@@ -14,6 +14,12 @@ public class SLLTransaksi {
   public void dataTransaksi(Kendaraan kendaraan, BBM bbm,double perLiter){
     TransaksiPengisian inputLayanan = new TransaksiPengisian(kendaraan,bbm, perLiter);
     NodeTransaksi ndInput = new NodeTransaksi(inputLayanan, null);
+    if (isEmpty15()) {
+      head=tail=ndInput;
+    } else {
+      tail.next=ndInput;
+      tail=ndInput;
+    }
   }
 
   public void tampilTransaksi(){
@@ -22,6 +28,7 @@ public class SLLTransaksi {
     } else {
       NodeTransaksi tmp = head;
       System.out.println("-- Riwayat Transaksi --");
+      System.out.printf("%-15s %-15s %-15s %-15s", "Plat Nomor", "Jenis", "Jenis BBM", "Total");
       while (tmp!=null) {
         tmp.tp.riwayTransaksi();
         tmp=tmp.next;

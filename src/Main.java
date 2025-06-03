@@ -48,17 +48,17 @@ public class Main {
                     System.out.println(">> Sisa Antrian: "+sll.cekSisaAntrian());
                     break;
                 case 4:
-                System.out.println("Nama Kendaraan: "+ sll.head.kendaraan.platNomor);
-                sbb.ListBBM();
-                System.out.print("pilih BBM:");
-                String namaBBM = sc.nextLine();
-                System.out.print("Masukkan jumlah liter: ");
-                double liter = sc.nextDouble();
-                sc.nextLine();
-                BBM cariBBM = sbb.cariBBM(namaBBM);
-                stt.dataTransaksi(sll.head.kendaraan, cariBBM, liter);
-                System.out.println(">> Transaksi Berhasil Dicatat");
-                sll.layaniKendaraan();
+                    System.out.println("Nama Kendaraan: "+ sll.head.kendaraan.platNomor);
+                    sbb.ListBBM();
+                    System.out.print("pilih BBM:");
+                    String namaBBM = sc.nextLine();
+                    System.out.print("Masukkan jumlah liter: ");
+                    double liter = sc.nextDouble();
+                    sc.nextLine();
+                    BBM cariBBM = sbb.cariBBM(namaBBM);
+                    stt.dataTransaksi(sll.head.kendaraan, cariBBM, liter);
+                    System.out.println(">> Transaksi Berhasil Dicatat");
+                    sll.layaniKendaraan();
                     break;
                 case 5:
                     stt.tampilTransaksi();
