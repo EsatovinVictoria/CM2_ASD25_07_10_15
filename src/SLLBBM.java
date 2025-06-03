@@ -34,4 +34,21 @@ public class SLLBBM {
             }
             System.out.println();
         }
+
+        public BBM cariBBM(String key) {
+            NodeBBM tmp = head;
+            boolean isFound = false;
+
+            while (tmp != null) {
+                if (tmp.bbm.namaBBM.equalsIgnoreCase(key)) {
+                    isFound = true;
+                    return tmp.bbm;
+                }
+                tmp = tmp.next;
+            }
+
+            System.out.println("Nama BBM tidak ditemmukan!");
+            return null;
+        }
+
     }
