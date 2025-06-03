@@ -4,10 +4,16 @@ public class Main {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         Kendaraan kendaraan = new Kendaraan();
+        BBM bbm = new BBM();
         SLLAntrian sll = new SLLAntrian();
+        SLLBBM sbb = new SLLBBM();
         int pilih;
-
         System.out.println();
+
+        sbb.tambahDataBBM(new BBM("Pertalite", 10000));
+        sbb.tambahDataBBM(new BBM("Pertamax", 12400));
+        sbb.tambahDataBBM(new BBM("Biosolara",6800));
+        sbb.tambahDataBBM(new BBM("Dexlite",13400));
 
         do {
             System.out.println("===== Sistem Antrian SPBU =====");
@@ -41,6 +47,7 @@ public class Main {
                     System.out.println(">> Sisa Antrian: "+sll.cekSisaAntrian());
                     break;
                 case 4:
+                    sbb.ListBBM();
                     break;
                 case 5:
                     break;
