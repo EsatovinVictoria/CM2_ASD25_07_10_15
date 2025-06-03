@@ -30,7 +30,7 @@ public class Main {
                     System.out.print("Input Merk: ");
                     String merk = sc.nextLine();
                     kendaraan = new Kendaraan(plat,jenis,merk);
-                    sll.tambahData(kendaraan);
+                    sll.tambahDataKendaraan(kendaraan);
                     System.out.println(">>Kendaraan masuk ke dalam antrian");
                     break;
                     case 2:

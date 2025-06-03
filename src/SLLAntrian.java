@@ -11,7 +11,7 @@ public class SLLAntrian {
         return size == 0;
     }
 
-    public void tambahData(Kendaraan kendaraan){
+    public void tambahDataKendaraan(Kendaraan kendaraan){
         NodeAntrian newNode = new NodeAntrian(kendaraan, null);
         if (IsEmpty()) {
             head=tail=newNode;

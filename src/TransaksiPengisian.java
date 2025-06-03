@@ -10,6 +10,6 @@ public class TransaksiPengisian {
   }
 
   public void riwayTransaksi() {
-    System.out.printf("%-15s %-15s %-15s %-15f", kendaraan.platNomor, kendaraan.tipe, bbm.namaBBM, (bbm.hargaPerLiter * liter));
+    System.out.printf("%-15s %-15s %-15s %-15.2f\n", kendaraan.platNomor, kendaraan.tipe, bbm.namaBBM, (bbm.hargaPerLiter * liter));
   }
 }
