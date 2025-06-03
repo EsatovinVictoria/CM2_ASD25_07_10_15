@@ -4,12 +4,14 @@ public class Kendaraan {
     String tipe;
     String merk;
 
-    Kendaraan(String plat, String type, String merek) {
+    Kendaraan(){
+        
+    }
 
+    Kendaraan(String plat, String type, String merek) {
         platNomor = plat;
         tipe = type;
         merk = merek;
-
     }
 
     public void tampilKendaraan() {

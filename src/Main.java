@@ -3,7 +3,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-        
+        Kendaraan kendaraan = new Kendaraan();
+        SLLAntrian sll = new SLLAntrian();
         int pilih;
 
         System.out.println();
@@ -20,7 +21,21 @@ public class Main {
             System.out.print("Pilih: ");
             pilih = sc.nextInt();
             sc.nextLine();
-
+            switch (pilih) {
+                case 1:
+                    System.out.print("Input Plat Nomor: ");
+                    String plat = sc.nextLine();
+                    System.out.print("Input Jenis Kendaraan: ");
+                    String jenis = sc.nextLine();
+                    System.out.print("Input Merk: ");
+                    String merk = sc.nextLine();
+                    kendaraan = new Kendaraan(plat,jenis,merk);
+                    System.out.println(">>Kendaraan masuk ke dalam antrian");
+                    break;
+            
+                default:
+                    break;
+            }
         } while (true);
     }
 }
