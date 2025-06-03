@@ -15,7 +15,7 @@ public class Kendaraan {
     }
 
     public void tampilKendaraan() {
-        System.out.printf("%-15s %-15s %-15s", platNomor, tipe, merk);
+        System.out.printf("%-15s %-15s %-15s\n", platNomor, tipe, merk);
     }
 }
 
