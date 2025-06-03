@@ -38,4 +38,19 @@ public class SLLAntrian {
         }
         size--;
     }
+
+    public void lihatAntrian() {
+        if (IsEmpty()) {
+            System.out.println("Antrian masih kosong!");
+            return;
+        }
+
+        Node tmp = head;
+
+        while (tmp != null) {
+            tmp.kendaraan.tampilKendaraan();
+            tmp = tmp.next;
+        }
+        System.out.println();
+    }
 }
