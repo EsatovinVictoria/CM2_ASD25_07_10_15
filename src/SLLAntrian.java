@@ -19,5 +19,23 @@ public class SLLAntrian {
             tail.next = newNode;
             tail = newNode;
         }
+        size++;
+    }
+
+    public int cekSisaAntrian() {
+        return size;
+    }
+
+    public void layaniKendaraan() {
+        if (IsEmpty()) {
+            System.out.println("Antrian masih kosong!");
+            return;
+        } else if (size == 1) {
+            head = null;
+            tail = null;
+        } else {
+            head = head.next;
+        }
+        size--;
     }
 }
